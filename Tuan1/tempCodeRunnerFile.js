@@ -32,6 +32,6 @@ console.log("BMI of Mark in Data 2 : " + Markbmi)
 console.log("BMI of John in Data 2 : " + Johnbmi)
 markHigherBMI = Markbmi - Johnbmi
 if (markHigherBMI > 0) {
-    console.log("Mark's BMI is higher than John's! in Data 2 \n")
+    console.log("Mark's BMI (" + Markbmi + ") is higher than John's (" + Johnbmi + ")! in Data 2 \n")
 }
-else console.log("John's BMI is higher than Mark's! in Data 2 \n")
+else console.log("John's BMI (" + Johnbmi + ") is higher than Mark's (" + Markbmi + ")! in Data 2 \n")
