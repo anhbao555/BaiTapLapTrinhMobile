@@ -25,13 +25,13 @@ console.log(avgKoalas2)
 //and then logs the winner to the console, together with the victory points, according to the rule above. 
 // Example: "Koalas win (30 vs. 13)"
 checkWinner = (avgDolhins, avgKoalas) => {
-    if (avgDolhins > avgKoalas) {
+    if (avgDolhins > 2 * avgKoalas) {
         return "Dolphins win (" + avgDolhins + " vs. " + avgKoalas + ")";
     }
-    else if (avgDolhins < avgKoalas) {
+    else if (2 * avgDolhins < avgKoalas) {
         return "Koalas win (" + avgKoalas + " vs. " + avgDolhins + ")";
     }
-    else return "Draw ( " + avgKoalas + " vs. " + avgDolhins + ")";
+    else return "No result";
 }
 
 // 4. Use the 'checkWinner' function to determine the winner for both Data 1 and Data 2
