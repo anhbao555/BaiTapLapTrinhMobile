@@ -1,43 +1,24 @@
-// 1. Create an arrow function 'calcAverage' to calculate the average of 3 scores
-calcAverage = (score1, score2, score3) => {
-    return (score1 + score2 + score3) / 3;
-}
-// Data 1: Dolphins score 44, 23 and 71. Koalas score 65, 54 and 49
-// Data 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
-// 2. Use the function to calculate the average for both teams
-// Data 1
-console.log("Data 1 : ")
-// Team 1
-var avgDolphins1 = calcAverage(44, 23, 71)
-console.log(avgDolphins1)
-// Team 2
-var avgKoalas1 = calcAverage(65, 54, 49)
-console.log(avgKoalas1)
-// Data 2
-console.log("Data 2 : ")
-// Team 1
-var avgDolphins2 = calcAverage(85, 54, 41)
-console.log(avgDolphins2)
-// Team 2
-var avgKoalas2 = calcAverage(23, 34, 27)
-console.log(avgKoalas2)
-// 3. Create a function 'checkWinner' that takes the average score of each team  as parameters ('avgDolhins' and 'avgKoalas'), 
-//and then logs the winner to the console, together with the victory points, according to the rule above. 
-// Example: "Koalas win (30 vs. 13)"
-checkWinner = (avgDolhins, avgKoalas) => {
-    if (avgDolhins > 2 * avgKoalas) {
-        return "Dolphins win (" + avgDolhins + " vs. " + avgKoalas + ")";
+// 1. Write a function 'calcTip' that takes any bill value as an input and returns 
+calcTip = (billvalues) => {
+    var tip = 0;
+    if (billvalues >= 50 && billvalues <= 300) {
+        tip = billvalues * 0.15
     }
-    else if (2 * avgDolhins < avgKoalas) {
-        return "Koalas win (" + avgKoalas + " vs. " + avgDolhins + ")";
-    }
-    else return "No result";
+    else tip = billvalues * 0.2
+    return tip
 }
-
-// 4. Use the 'checkWinner' function to determine the winner for both Data 1 and Data 2
-console.log("Data 1 : ")
-console.log(checkWinner(avgDolphins1, avgKoalas1))
-console.log("Data 2 : ")
-console.log(checkWinner(avgDolphins2, avgKoalas2))
-// 5. Ignore draws this time
-// Test data:
+// the corresponding tip, calculated based on the rules above (you can check out 
+// the code from first tip calculator challenge if you need to). Use the function 
+// type you like the most. Test the function using a bill value of 100
+console.log("The tip of a bill value of 100 : " + calcTip(100))
+// 2. And now let's use arrays! So create an array 'bills' containing the test data below
+// Test data: 125, 555 and 44
+console.log("Arrays : ")
+var bills = [125, 555, 44]
+// 3. Create an array 'tips' containing the tip value for each bill, calculated from the function you created before
+var tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
+console.log("Bills : " + bills.join(", "))
+console.log("Tips : " + tips.join(", "))
+// 4. Bonus: Create an array 'total' containing the total values, so the bill + tip
+var total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
+console.log("Total : " + total.join(", "))
